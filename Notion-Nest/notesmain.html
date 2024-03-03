@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>keep Notes</title>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="keep.css">
+<header class="header">
+  <div class=" search-header nav-item">
+    <input type="text" placeholder="Search" id="header-search-input">  
+    <i class="fa-solid fa-magnifying-glass"id="header-search-icon"></i>
+  </div>
+  <div class="header-name">
+  </div>
+ <div class="header-inner-flex">
+  <i class="fa-solid fa-toggle-off fa-2x "id="light"></i>
+  <div class="header__notes-view">
+    <div ></div>
+    <div ></div>
+    <div class="_block"></div>
+    <div class="_block"></div>
+  </div>
+ </div>
+   
+</header>
+<nav class="right-nav" id="right-nav">
+  <div class="right-nav-div">
+    <div><img src="register.jpeg"  width="50px" height="50px" /></div>
+  <div class="flex-item lap-item"><p>Notion-Nest</p></div>
+  <div class="flex-item nav-item"><p>Notion</p></div>
+  </div>
+ <div class="right-nav-user">
+  
+  <div id="user-img">
+<!-- <img src="profile.png" alt="" width="90px" height="90px" id="user-img"> -->
+  </div>
+  <p class="name">Guest</p>
+
+<div class="nav-search">
+  <input type="text" placeholder="Search" id="nav-search-input">
+  <i class="fa-solid fa-magnifying-glass" id="nav-search-icon"></i>
+</div>
+<div class="flex-item nav-addbtn"><button class="btn" id="addnote">
+  <h3>AddNotes <i class="fa-solid fa-square-plus"></i></h3>
+</button>
+</div>
+<div class="flex-item nav-item"><button class="btn" id="addnote">
+  <h3><a href="notesmain.html">Home</a></h3>
+</button>
+</div>
+<div class="flex-item"><button class="btn" id="addnote">
+  <h3><a href="about.html" target="_blank">About</a></h3>
+</button>
+</div>
+<button id="sign-out" class="btn"><h3 class="signcolor">signout <img src="logout.png" alt="" width="10px" height="10px"></h3></button>
+</div>
+<div class="nav-footer-content lap-item">
+  <p>&copy; 2024 Made by Anshuman.Rights reserved to <a href="https://linkedin.com/in/anshuman-mishra79/" target="_blank" >mishra</a>.</p>
+</div>
+<div class="nav-footer-content nav-item">
+  <p>&copy; Rights Reserved to <a href="https://linkedin.com/in/anshuman-mishra79/" target="_blank" >mishra</a>.</p>
+</div>
+</nav>
+<section>
+  <!-- <h4 id="msg-head">
+  </h4>
+  <h4 id="name-head"></h4> -->
+  <!-- <div class="note">
+    <div class="operation">
+      <input type="text" placeholder="Tittle" id="tittle">
+      <button class="edit"><i class="fas fa-edit"></i></button>
+        <button class="dlte"><i class=" fas fa-trash-alt"></i></button>
+      </div>
+      <div class="main"></div>
+        <textarea class="main-text" placeholder="Write note"></textarea>
+      
+  </div> -->
+
+</section>
+<!-- <footer>
+  <div class="footer-content">
+    <p>&copy; 2024 Made by Anshuman Mishra. All rights reserved to <a href="https://linkedin.com/in/anshuman-mishra79/" target="_blank" >mishra</a>.</p>
+  </div>
+</footer> -->
+
+
+   <script type="module" src="keepnotes.js"></script> 
+   <!-- <script type="module" src="notionfirebase.js"></script> -->
+   <script>
+    let user_creds=JSON.parse(sessionStorage.getItem("user-creds"));
+    console.log(user_creds);
+    let user_info=JSON.parse(sessionStorage.getItem("user-info"));
+    console.log(user_info.name);
+    let displayName=JSON.parse(sessionStorage.getItem("displayName"));
+    // console.log(displayName)
+    let user_name=document.querySelector('.name');
+    if(displayName)
+    user_name.innerHTML=displayName;
+    let user_photo=JSON.parse(sessionStorage.getItem("photoURL"));
+    console.log(user_photo)
+    let user_img=document.getElementById("user-img");
+    if (user_photo) {
+      user_img.style.backgroundImage = 'url(' + user_photo + ')';
+}
+    // console.log(user_photo);
+    // msg_head.innerText=`email:- ${user_creds.email} logged-in`;
+    // name_head.innerText=`hii ${user_info.name} welcome !!`;
+    
+   const header_name=document.querySelector('.header-name');
+   const right_nav_user_name=document.querySelector('.name');
+   if(displayName){
+    header_name.innerText=`Welcome ${displayName}!!✨`
+   }
+   if(user_info.name!=null){
+    header_name.innerText=`Welcome ${user_info.name}!!✨`
+    right_nav_user_name.innerHTML=user_info.name
+   }
+
+  //  if(user_info.name){
+  //   header_name.innerText=`Welcome ${user_info.name}!!✨`
+  //  }
+
+//     let signOut=()=>{
+//     const ans=confirm("are you sure want to signout?")
+//       if(ans)
+//       window.location.href='form.html';
+//     sessionStorage.removeItem("user-creds");
+//     sessionStorage.removeItem('user-info');
+//      sessionStorage.clear();
+//      localStorage.clear();
+//   }
+//   const sign_out=document.getElementById('sign-out');
+// sign_out.addEventListener("click",signOut);
+
+
+
+    let checkCredentials=()=>{
+      if((user_info.name||displayName)){
+        
+      }
+      else{
+        console.warn("sessionstorage");
+        window.location.href='form.html';
+      }
+      // if((user_photo==null&&user_creds==null)){
+      //   window.location.href='form.html';
+      // }
+      // else
+      // {
+      //   msg_head.innerText=`email:- ${user_creds.email} logged-in`;
+      //   name_head.innerText=`hii ${user_info.name} welcome !!`;
+      // }
+    }
+  
+    window.addEventListener("load",checkCredentials);
+ 
+
+
+   </script>
+</html>
+
+
+
+
+

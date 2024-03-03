@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notion-Nest</title>
+    <link rel="stylesheet" href="login_signup.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="index-header">
+      <div class="container">
+          <img src="register.jpeg" alt="" width="50px" height="50px" />
+        <h2 class="heading">Notion-Nest</h2>
+        <nav>
+          <ul>
+            <li class="link">
+              <a href="index.html">home</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+        <main>
+          <section class="user-container">
+            <div class="registration __block">
+              <div class="grid-two--column">
+                <div class="form-text">
+                  <h2>Welcome back!!</h2>
+                  <p>
+                    to keep connect with us login with your personal details.
+                  </p>
+                  <button class="registration-btn">SignIn</button>
+                </div>
+                <div class="registration-form">
+                  <h2>Create-Account</h2>
+                  <p>use your email for registration.</p>
+                  <form action="#" id="main-form-register">
+                    <div class="input-field">
+                        <label for="username">
+                            <input type="text" placeholder="name..." id="name-register">
+                        </label>
+                        </div>
+                        <div class="input-field">
+                            <label for="email">
+                                <input type="email" name="#" id="email-register" placeholder="email">
+                            </label>
+                        </div>
+                        <div class="input-field">
+                            <label for="password">
+                                <input type="password" name="#" id="password-register" placeholder="Password">
+                                <i class="fa-solid fa-2x fa-eye-slash" id="toggle-register-password"></i>
+                            </label>
+                        </div>
+                        <div class="input-text">
+                            <input type="submit" value="register"id="register-btn">
+                        </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="login  __hidden">
+                <div class="grid-two--column">
+                  <div class="form-text  form-text1">
+                    <h2>Hello friend!</h2>
+                    <p>
+                     Enter your Personal details and start your journey here!!
+                    </p>
+                    <button class="login-btn">Register</button>
+                  </div>
+                  <div class="login-form">
+                    <h2>signIn</h2>
+                    <div class="social-icons">
+                     <button id="google-signin-btn">
+                       <i class="fa-brands fa-google"></i>
+                     </button>
+                    </div>
+                    <p>or use your account.</p>
+                    <form action="#" id="main-form-signin">
+                          <div class="input-field">
+                              <label for="email">
+                                  <input type="email" name="#" id="email-signin" placeholder="email">
+                              </label>
+                          </div>
+                          <div class="input-field">
+                              <label for="password">
+                                  <input type="password" name="#" id="password-signin" placeholder="password">
+                                  <i class="fa-solid fa-2x fa-eye-slash" id="toggle-sigin-password"></i>
+                              </label>
+                          </div>
+                          <div class="input-text">
+                              <button type="submit" value="signIn" id="signin-btn">signIn</button>
+
+                          </div>
+                      </div>
+                    </form>
+                  </div>
+              </div>
+          </section>
+        </main>
+      </div>
+    </header>
+    <script src="form.js"></script>
+    <script type="module" src="notionfirebase.js"></script>
+  </body>
+</html>

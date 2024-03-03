@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.about-header {
+  height: 100vh;
+  width: 100%;
+}
+.inner-header{
+  height: 10vh;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.about-heading {
+  margin-top: 23px;
+}
+
+.image-register {
+  width: 300px;
+  mix-blend-mode: multiply;
+}
+.my-image {
+  width: 200px;
+  border: 0.1rem solid #fff;
+  border-radius: 10px;
+}
+
+.about-container {
+  color: #fff;
+  text-align: center;
+}
+
+.about-content {
+  width: 80vw;
+  max-width: 800px;
+  padding: 30px;
+  text-shadow: #000;
+  line-height: 1.5;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  gap: 1.5;
+  font-size: large;
+}
+
+.inner-about-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(
+    0deg,
+    hsl(0, 4%, 52%) 0%,
+    hsl(348deg 12% 84%) 16%,
+    hsl(330deg 14% 78%) 21%,
+    hsl(317deg 15% 72%) 25%,
+    hsl(302deg 17% 66%) 29%,
+    hsl(288deg 18% 61%) 33%,
+    hsl(273deg 19% 55%) 38%,
+    hsl(258deg 21% 49%) 43%,
+    hsl(244deg 22% 43%) 50%,
+    hsl(229deg 24% 37%) 57%,
+    hsl(216deg 25% 32%) 68%,
+    hsl(201deg 26% 26%) 81%,
+    hsl(186deg 27% 20%) 100%
+  );
+  backdrop-filter: blur(500px);
+}
+.about-myself {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 2rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin: 1.6rem 0 1.5rem 0;
+}
+.social-icons .fa-brands {
+  padding: 1rem;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  color: #fff;
+}
+.social-icons .fa-brands:hover {
+  background-color: rgb(66, 76, 46);
+}
+.mycontent > h2 {
+  margin-top: 2px;
+}
+.tech-stack {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin: 1.6rem 0 1.5rem 0;
+}
+.tech-stack > i {
+  padding: 1rem;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  color: #fff;
+}
+.tech-stack > i:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.mycontent > p {
+  color: #f3f4f6;
+  font-size: large;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: grey;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: brown;
+}
+button {
+  margin-top: .6rem;
+  margin-left: 1rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border: 0.01rem solid #fff;
+  border-radius: 4px;
+  outline: none;
+  padding: 0.6rem 1.2rem;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+button:hover{
+    background-color: #fff;
+    color: #000;
+}
+@media (max-width:530px){
+  .about-myself {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    padding: 2rem;
+  }
+  .mycontent{
+    margin-top: 2rem;
+  }
+  .about-heading{
+    position: absolute;
+    right: 2rem;
+  }
+  button{
+    margin-top: 1.2rem;
+  }
+}
+ h2 a{
+  color: #f3f4f6;
+  text-decoration: none;
+}
+h2 a:hover{
+  color: rgb(48, 21, 21);
+}

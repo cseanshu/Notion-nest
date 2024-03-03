@@ -1,0 +1,226 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.index-header{
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(
+40deg,
+hsl(0deg 0% 49%) 0%,
+hsl(195deg 1% 48%) 22%,
+hsl(195deg 2% 46%) 29%,
+hsl(195deg 3% 45%) 33%,
+hsl(195deg 5% 43%) 35%,
+hsl(195deg 6% 41%) 37%,
+hsl(195deg 7% 40%) 38%,
+hsl(195deg 9% 38%) 39%,
+hsl(195deg 11% 37%) 40%,
+hsl(195deg 13% 35%) 41%,
+hsl(195deg 15% 33%) 43%,
+hsl(195deg 17% 32%) 45%,
+hsl(194deg 20% 30%) 49%,
+hsl(194deg 23% 29%) 54%,
+hsl(194deg 26% 27%) 64%,
+hsl(194deg 30% 25%) 99%
+);
+}
+img{
+  mix-blend-mode: multiply;
+}
+.container{
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.heading{
+  cursor: pointer;
+  position: absolute;
+  left: 6rem;
+  margin-top: 10px;
+}
+:root{
+  --var-primary-color:#2888E8
+}
+html{
+  font-size: 62.5%;
+}
+h1,h2,h3,h4{
+  font-family:'Lexand-Deca',sans-serif;
+}
+h1{
+  font-size: 4rem;
+}
+h2{
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(88, 49, 49, 0.5);
+
+
+}
+p{
+  font-size: 1.6rem;
+  letter-spacing: 0.08rem;
+}
+
+button,input[type="submit"]{
+  border: 0.01rem solid #fff;
+  outline: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 1.7rem;
+  text-transform: capitalize;
+  background-color: rgb(40, 136, 232);
+  color: #fff;
+  cursor: pointer;
+}
+button,input[type="submit"]:hover{
+  background-color: transparent;
+  color: #000;
+  border: 0.01rem solid #000;
+}
+
+/* style for the registration */
+
+
+nav a{
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  margin-right: 4rem;
+}
+ul{
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+main{
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.grid-two--column{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+}
+.registration,.login{
+  min-height: 30rem;
+  min-width: 40vw;
+  text-align: center;
+
+}
+.form-text{
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-image: linear-gradient(rgb(0,0,0,0.5),rgb(0,0,0,0.5)),url('register.jpeg');
+  background-repeat: repeat;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+.form-text1{
+  background-image: linear-gradient(rgb(0,0,0,0.5),rgb(0,0,0,0.5)),url('loginimage.jpeg');
+
+}
+.form-text p{
+  width: 30ch;
+  margin: 2rem 0 2rem 2rem;
+  text-align: center;
+}
+.form-text button{
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
+}
+.form-text button:hover{
+  background-color: transparent;
+  color: #fff;
+}
+.registration-form,.login-form{
+ width: 100%;
+ min-height: 45vh;
+ background-color: #fff;
+ display: flex;
+ justify-content: center;
+ text-align: center;
+ flex-direction: column;
+}
+.registration-form p, .login-form p{
+  margin:  1rem 0 0.7rem 1rem;
+}
+.social-icons .fa-brands{
+  padding: 1rem;
+   border: 1px solid #000;
+   border-radius: 50%;
+   font-size: 1.3rem;
+}
+.social-icons .fa-brands:hover{
+  text-align: center;
+  color: rgb(21, 123, 27);
+  border: 2px solid rgb(21, 123, 27);
+}
+input{
+  width: 20rem;
+  margin: 0.7rem 0;
+  background-color: #e8e8e8;
+  padding: 1rem 1.8rem;
+  border: none;
+
+}
+input [type="submit"]{
+  margin-top: 1rem;
+  min-width: 10rem;
+  color: #fff;
+}
+.registration-form >h2{
+  margin: 2rem;
+}
+.login-form>h2{
+  margin: 1rem;
+}
+.__block{
+  display: block;
+}
+.__hidden {
+  display: none;
+}
+#google-signin-btn:hover{
+  padding: 0px 5px 0px 5px;
+  border: 2px solid rgb(21, 123, 27);
+  border: none;
+}
+
+#signin-btn{
+  background-color: rgb(40, 136, 232);
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  margin-bottom: 8px;
+}
+#signin-btn:hover{
+background-color: transparent;
+border: 0.1rem solid black;
+color: #000;
+}
+@media (max-width:650px){
+  .grid-two--column{
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-area: auto
+  }
+
+}
+.fa-eye ,.fa-eye-slash {
+  margin-left: -30px; 
+  cursor: pointer;
+  color: #555;
+}

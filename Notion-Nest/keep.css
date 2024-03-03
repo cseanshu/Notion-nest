@@ -1,0 +1,457 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Source+Sans+3&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inconsolata', monospace, 'Source Sans 3', sans-serif;
+}
+  /* css for the header  */
+img{
+    mix-blend-mode: multiply;
+   }
+.header{
+    display: flex;
+    background-color:transparent;
+    position: fixed;
+    justify-content: end;
+    width: 100%;
+    top: 0;
+    z-index: 100; 
+}
+.header>.header-name{
+   position: absolute;
+   margin-top: 10px;
+   left: 15rem;
+   font-size: x-large;
+   font-weight: 600;
+   color:rgb(21, 87, 87);
+   border-bottom: 1px solid white;
+}
+.header-inner-flex{
+    display: flex;
+    margin: 10px 20px 0 0;
+}
+.header-inner-flex>i{
+    color:rgb(21, 87, 87);
+    cursor: pointer;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+}
+/* css for the header change orientation button */
+.header__notes-view {
+    display: grid;
+    cursor: pointer;
+    grid-gap: 0.3rem;
+    width: 1.6rem;
+    height: 1.5rem;
+    margin: .2rem 1rem 0rem 1.3rem;
+    transform: rotate(90deg);
+    transition: border-color 0.3s ease-in-out;
+}
+.header__notes-view div:first-of-type {
+    grid-column: 1/1;
+    grid-row: 1/1;
+}
+.header__notes-view div:nth-of-type(2) {
+    grid-column: 2/2;
+    grid-row: 1/1;
+}
+.header__notes-view div {
+    border: 0.2rem solid  rgb(74, 145, 145);
+}
+.search-header{
+    position: absolute;
+    left: 8.8rem;
+    top: 5px;
+    background-color:white;
+    border-radius: 5px;
+}
+.search-header>i{
+    color:rgb(21, 87, 87);
+    margin-right: 6px;
+
+}
+.search-header>input{
+    padding: 10px 0 10px 0px ;
+    border: none;
+    outline: none;
+    font-weight: 700;
+    font-size: large;
+    margin-left: 10px;
+    color:rgb(21, 87, 87);
+    width: 5rem;
+   
+}
+/* css for the body and its animation */
+
+@keyframes moveBackground{
+    from{
+     background-position:center center;
+    }
+    to{
+        background-positon:bottom center;
+    }
+}
+  body{
+    background-color: #ebe9e9;
+    background-image: url('lightnote.jpeg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center ;
+    background-attachment: fixed;
+    background-size: 350px 350px;
+    background-position: right bottom;
+    animation: moveBackground 5s ease-in-out alternate  ;
+  }
+
+  /* css for the section where the note started and stored */
+section {
+    position: absolute;
+    left: 15rem;
+    top: 3rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-right: 4rem;
+    /* background-color: #9d9999; */
+}
+  /* css for the notes (the div created on the onclick) */
+
+.note{
+    background-color:white;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin: 5px;
+    max-width: 60vw;
+    /* border: 2px solid rgb(74, 145, 145); */
+   border-radius: 12px;
+   height: fit-content;
+}
+ 
+/* tittle css */
+
+#tittle{
+    outline:none;
+    /* margin-right: 50px; */
+    /* margin-top: 10  px; */
+    border: none;
+    padding: 5px;
+    font-weight: 800;
+    /* width: 270px; */
+    width: auto;
+    height: 38px;
+    border-radius: 4px;
+}
+.show-tittle {
+    text-align: center;
+    font-weight: 900;
+    min-height: 35px;
+    height:fit-content;
+    padding: 5px; 
+    background-color:hsl(0, 2%, 55%);
+    color:rgb(21, 87, 87);
+    font-size: 18px; 
+    border-radius: 4px;
+    overflow:auto;
+    text-shadow: 4px 1px 3px rgba(247, 245, 245, 0.5);
+}
+/* textarea css of notes */
+.main {
+    min-height: 200px;
+    text-align: center;
+    /* width: 30vw; */
+    /* background-color: #f0f0f0; */
+    border: 1px solid #ccc;
+    border-radius: 14px;
+    margin: 3px 0;
+    font-size: 20px;
+    line-height: 1.4;
+    color:rgb(20, 22, 22);
+    font-weight: 800;
+}
+.main-text{
+    border: none;
+    width: 30vw;
+    padding: 5px;
+    min-height: 100px;
+    font-size: large;
+    outline: none;
+}
+/* css for the operation edit and delete */
+.operation{
+    display: flex;
+    /* border: 1px solid rgb(74, 145, 145); */
+    justify-content: end;
+    align-items: center;
+    gap: 5px;
+    /* width: 270px; */
+    width: auto;
+}
+.edit,.dlte{
+    cursor: pointer;
+}
+
+.hidden{
+    display: none;
+}
+.hidden_div{
+    display: none;
+}
+._block{
+    display: block;
+}
+.date{
+   padding: 10px;
+   margin-top: -2px;
+   font-weight: 800;
+}
+
+
+
+
+/* css for the scroll bar */
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    background-color: grey;
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color: brown;
+}
+
+
+
+/* right navcss */
+.right-nav{
+    position: fixed;
+    /* background-color:#ccc; */
+    width: 13rem;     
+    height: 100%;
+    display: flex;  
+    flex-direction: column;
+    row-gap: 1rem;
+    background-image: linear-gradient(
+        355deg,
+        hsl(0deg 0% 48%) 0%,
+        hsl(0deg 0% 53%) 29%,
+        hsl(0deg 0% 58%) 36%,
+        hsl(0deg 0% 64%) 39%,
+        hsl(0deg 1% 69%) 41%,
+        hsl(0deg 1% 74%) 43%,
+        hsl(0deg 1% 80%) 46%,
+        hsl(0deg 2% 85%) 53%,
+        hsl(0deg 4% 91%) 66%,
+        hsl(0deg 12% 97%) 100%
+      );
+}
+.right-nav-color-light{
+    background-image: linear-gradient(
+        355deg,
+        hsl(0deg 0% 48%) 0%,
+        hsl(0deg 0% 53%) 29%,
+        hsl(0deg 0% 58%) 36%,
+        hsl(0deg 0% 64%) 39%,
+        hsl(0deg 1% 69%) 41%,
+        hsl(0deg 1% 74%) 43%,
+        hsl(0deg 1% 80%) 46%,
+        hsl(0deg 2% 85%) 53%,
+        hsl(0deg 4% 91%) 66%,
+        hsl(0deg 12% 97%) 100%
+      );
+}
+.right-nav-color-dark{
+    background-image: linear-gradient(
+  55deg,
+  hsl(55deg 67% 26%) 0%,
+  hsl(48deg 59% 31%) 20%,
+  hsl(41deg 51% 35%) 33%,
+  hsl(35deg 45% 39%) 42%,
+  hsl(30deg 39% 43%) 49%,
+  hsl(25deg 34% 46%) 55%,
+  hsl(20deg 29% 49%) 61%,
+  hsl(15deg 26% 51%) 66%,
+  hsl(10deg 23% 54%) 71%,
+  hsl(5deg 19% 55%) 79%,
+  hsl(0deg 15% 57%) 98%
+);
+}
+.right-nav-div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* display: none; */
+    display: flex;
+color:rgb(21, 87, 87);
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.flex-item>p{
+    font-size: x-large;
+    margin-top: 16px;
+    margin-left: 10px;
+    font-weight: 900;
+}
+.right-nav-user>img{
+  margin-left: 2rem;
+}
+.right-nav-user{
+    position: absolute;
+    top: 3.2rem;
+    display:flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1.6rem;
+  margin-right: 25px;
+}
+.name{
+    margin-left: 1rem;
+    text-align: center;
+    overflow: hidden;
+   text-overflow: ellipsis;
+    font-size: x-large;
+    font-weight: 600;
+    color:rgb(21, 87, 87);
+}
+.nav-footer-content{
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    color:rgb(21, 87, 87);
+    font-weight: 900;
+    margin-left: 2px;
+}
+a:hover{
+    color: red;
+}
+.nav-search{
+    background-color:white;
+    margin-left: 16px;
+    border-radius: 5px;
+}
+.nav-search>i{
+    color:rgb(21, 87, 87);
+    margin-right: 6px;
+
+}
+.nav-search>input{
+    padding: 10px 0 10px 0px ;
+    border: none;
+    outline: none;
+    font-weight: 700;
+    font-size: large;
+    margin-left: 5px;
+    color:rgb(21, 87, 87);
+    width: 7.9rem;
+}
+.btn>h3{
+    color:rgb(21, 87, 87);
+}
+.btn:hover{
+    background-color: transparent;
+    border: 1px solid rgb(21, 87, 87) ;
+}
+
+.btn{
+    margin: 0px 0px 2px 15px;
+    padding: 10px 32px 10px 32px;
+    margin: 0px 0px 2px 1px;
+    padding: 10px 10px 10px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 158px;
+    font-weight: 900;
+    color:rgb(21, 87, 87);
+}
+#user-img{
+    background-color: rgb(134, 141, 141);
+    background-image: url('profile.png');
+    background-position: center;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    align-items: center;
+}
+.menu-icon{
+    position: absolute;
+    top: 0;
+    left: 13rem;
+    /* left: 0; */
+    margin-top: 10px;
+}
+
+
+@media (min-width:420px){
+    .nav-item{
+        display: none;
+    }
+    
+}
+
+@media (max-width:770px){
+    .header-name{
+        display: none;
+    }
+    #user-img{
+        width: 100px;
+        height: 100px;
+        background-position: top;
+    }
+
+}
+@media (max-width:440px){
+   .right-nav{
+    width: 8rem;
+   }
+   .btn{
+    width: 100px;
+   }
+   .right-nav-user{
+    position: absolute;
+    top: 4rem;
+   }
+   .flex-item>p{
+    margin-left: 0px;
+   }
+    .lap-item{
+        display: none;
+    }
+    section{
+        position: absolute;
+        left: 8.5rem;
+    }
+    .nav-search{
+        display: none;
+    }
+    .right-nav-user{
+        display: flex;
+        /* justify-content: center; */
+    }
+    .header__notes-view{
+        margin: .2rem 0rem 0rem .8rem;
+    }
+  
+
+}
+button>h3>a{
+    color:rgb(21, 87, 87) !important;
+   text-decoration: none;;
+
+}
+
+ /* design for the pop-up div after result is not found */
+ .pop-Up{
+    display: flex;
+     justify-content: center;
+     align-items: center;
+     font-size: larger;
+    min-width: 250px;
+    min-height: 250px;
+    background-color:#f1f1f1;
+    font-family: math;
+    font-weight: 900;
+    border-radius: 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ }
